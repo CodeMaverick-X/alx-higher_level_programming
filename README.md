@@ -4,5 +4,5 @@ At Alx Holberton School, we learn by doing. We have projects everyday that we ha
 
 | Directories  | Descriptions |
 | ------------- | ------------- |
-|[0x00-python-hello_world][../0x00-python-hello_world]| basic inpute  |
+|[0x00-python-hello_world](../0x00-python-hello_world)| basic inpute  |
 | Content Cell  | Content Cell  |
