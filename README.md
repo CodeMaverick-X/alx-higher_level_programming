@@ -1,6 +1,8 @@
 # Higher level programming language
+## Description
+At Alx Holberton School, we learn by doing. We have projects everyday that we have to push on GitHub in order for an automatic review to be done. This repository contains directories each corresponding to a high-level language project
 
-| First Header  | Second Header |
+| Directories  | Descriptions |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+|[0x00-python-hello_world][../0x00-python-hello_world]| basic inpute  |
 | Content Cell  | Content Cell  |
