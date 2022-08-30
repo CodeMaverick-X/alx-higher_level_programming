@@ -3,6 +3,11 @@
  * is_palindrome - checks if a list is palindrome
  * @head: pointer to the head of the list
  * Return: 1 if is and 0 if not
+ * Description: we shall find the middle of the list and
+ * check if it is even or odd,  we then point to the middle
+ * with a pointer mid and reverse that second part of the list
+ * check if it is palindrome and then reverse it back before
+ * we return
  */
 
 int is_palindrome(listint_t **head)
