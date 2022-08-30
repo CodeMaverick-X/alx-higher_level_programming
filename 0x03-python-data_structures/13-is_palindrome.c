@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 
 			break;
 		}
-
+                slow = slow->next;
 	}
 
 	reverse(&mid);
