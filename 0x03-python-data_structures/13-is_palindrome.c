@@ -24,17 +24,18 @@ int is_palindrome(listint_t **head)
 		fast = fast->next->next;
 		if (!fast)
 		{
-			slow = slow->next;
 			mid = slow->next;
+
 			break;
 		}
 
 		if (!fast->next)
 		{
-			slow = slow->next->next;
-			mid = slow;
+			mid = slow->next->next;
+
 			break;
 		}
+
 	}
 
 	reverse(&mid);
