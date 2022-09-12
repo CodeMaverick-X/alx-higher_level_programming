@@ -6,11 +6,13 @@ def safe_print_list_integers(my_list=[], x=0):
         for n in range(x):
             try:
                 print("{:d}".format(my_list[i]), end="")
-                i = i + 1
+                count = count + 1
             except (ValueError, TypeError):
                 pass
+            i = i + 1
+
         print()
     except IndexError:
         print()
 
-    return (i)
+    return (count)
