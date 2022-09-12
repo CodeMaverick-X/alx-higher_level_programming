@@ -2,23 +2,17 @@
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
     i = 0
+    try:
+        for n in range(x):
+            try:
+                print("{:d}".format(my_list[i]), end="")
+                count = count + 1
+            except (ValueError, TypeError):
+                pass
+            i = i + 1
 
-    for n in range(x):
-        try:
-            print("{:d}".format(my_list[i]), end="")
-            count = count + 1
-        except (ValueError, TypeError):
-            pass
-        i = i + 1
-
-    print()
+        print()
+    except IndexError:
+        print()
 
     return (count)
-
-
-my_list = [1, 2, 3, "School", 4, 5, [1, 2, 3]]
-nb_print = safe_print_list_integers(my_list, len(my_list))
-print("nb_print: {:d}".format(nb_print))
-
-nb_print = safe_print_list_integers(my_list, len(my_list) + 2)
-print("nb_print: {:d}".format(nb_print))
