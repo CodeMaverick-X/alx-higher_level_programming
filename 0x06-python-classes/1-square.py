@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""this class creates a class named square and initialises it"""
 class Square:
     """square class based on 0-sqaure.py
     Instantiation with size (no type/value verification).
