@@ -3,8 +3,13 @@
 
 
 class Square:
-    """definition of a class named square that calculates
-    the area of a square"""
+    """Represents a square.
+    Private instance attribute: size:
+        - property def size(self)
+        - property setter def size(self, value)
+    Instantiation with optional size.
+    Public instance method: def area(self).
+    """
 
     def __init__(self, size=0):
         """initialises the size obj attr
@@ -12,12 +17,6 @@ class Square:
         private instance attribute: size"""
 
         self.__size = size
-
-    def area(self):
-        """calculates the area of a square
-        Public instance method: def area(self):"""
-
-        return self.__size * self.__size
 
     @property
     def size(self):
@@ -34,3 +33,7 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         size.__size = value
+
+    def area(self):
+        """Returns the current square area."""
+        return self.__size ** 2
