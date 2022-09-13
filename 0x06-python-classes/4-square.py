@@ -13,12 +13,6 @@ class Square:
 
         self.__size = size
 
-    def area(self):
-        """calculates the area of a square
-        Public instance method: def area(self):"""
-
-        return self.__size * self.__size
-
     @property
     def size(self):
         """getter function to get the atrr"""
@@ -34,3 +28,11 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         size.__size = value
+
+
+    def area(self):
+        """initialises the size obj attr
+        to size that was pased in
+        private instance attribute: size"""
+
+        return self.__size * self.__size
