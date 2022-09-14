@@ -43,7 +43,7 @@ class Square:
         if val[0] < 0 or val[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = val
-    
+
     def __str__(self):
         """handles print"""
         my_str = ""
