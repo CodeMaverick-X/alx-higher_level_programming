@@ -36,12 +36,39 @@ class Node:
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     """class to represwnt the singlu linked list"""
+
     def __init__(self):
         """instantiation"""
-        
+        self.__head = None
 
-    
+    def __str__(self):
+        """for print statement"""
+        my_str = ""
+        node = self.__head
+        while node:
+            my_str += str(node.data)
+            my_str += '\n'
+            node = node.next_node
+        return my_str[:-1]
 
+    def sorted_insert(self, value):
+        """sorted insert into the list"""
+        new_node = Node(value)
 
+        if self.__head is None:
+            self.__head = new_node
+            return
+
+        if value < self.__head.data:
+            new_node.next_node = self.__head
+            self.__head = new_node
+            return
+
+        ptr = self.__head
+        while ptr.next_node and ptr.next_node.data < value:
+            ptr = ptr.next_node
+        new_node.next_node = ptr.next_node
+        ptr.next_node = new_node
