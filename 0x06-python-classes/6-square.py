@@ -24,7 +24,7 @@ class Square:
         """setter function to set the size attr"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
@@ -34,11 +34,15 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self, position_g):
+    def position(self, val):
         """settet methjod for position atrr"""
-        if not isinstance(position_g, tuple):
+        if not isinstance(val, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position_g
+        if not isinstance(val[0], int) or not isinstance(val[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if val[0] < 0 or val[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = val
 
     def area(self):
         """return the area of the square"""
