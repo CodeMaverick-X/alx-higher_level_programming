@@ -16,7 +16,12 @@ class Square:
         to size that was pased in
         private instance attribute: size"""
 
-        self.__size = size
+        self.size = size
+
+    def area(self):
+        """returning the area of the square"""
+
+        return self.__size * self.__size
 
     @property
     def size(self):
@@ -32,8 +37,4 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        size.__size = value
-
-    def area(self):
-        """Returns the current square area."""
-        return self.__size ** 2
+        self.__size = value
