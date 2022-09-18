@@ -1,0 +1,46 @@
+=========================
+test for 4-print_square
+=========================
+
+the function print_square prints a square
+of '#' with the size parameter used as both
+the lenght and width and size can only be 
+an int or you get slapped by typeerror bitch.
+============================================
+
+
+start test
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square("bruhh")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+>>> print_square(0)
+<BLANKLINE>
+
+>>> print_square(1)
+#
+
+>>> print_square(5.7)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+>>> print_square(-2)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+
+======================================

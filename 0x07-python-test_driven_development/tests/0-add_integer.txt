@@ -1,0 +1,53 @@
+==========================================
+Test document for the add_integer function
+==========================================
+
+this function accepts two integers or floats and returns the  addition
+equivalent to using the + oprerator
+Integer addition
+================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
+
+Float addition note that it rounds down the float
+=================================================
+
+>>> add_integer(6.9, 8.5)
+14
+
+edge cases
+==========
+>>> add_integer(6, "school")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("school", 9)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(5)
+103
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(-2, -3)
+-5
+
+>>> add_integer("alx", "learning")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
