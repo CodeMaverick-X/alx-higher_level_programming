@@ -75,4 +75,12 @@ nice bro
 >>> text_indentation("reinhard")
 reinhard
 
+>>> text_indentation(".    : ?")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
 ======================================
