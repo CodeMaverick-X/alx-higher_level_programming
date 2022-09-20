@@ -14,7 +14,7 @@ class Rectangle:
         """instantiation"""
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     number_of_instances = 0
 
@@ -76,4 +76,4 @@ class Rectangle:
     def __del__(self):
         """deleting"""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
