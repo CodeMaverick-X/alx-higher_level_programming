@@ -64,7 +64,7 @@ class Rectangle:
         str_ver = ""
         for h in range(self.__height):
             for w in range(self.__width):
-                str_ver += self.print_symbol
+                str_ver += str(self.print_symbol)
             if h != (self.__height - 1):
                 str_ver += "\n"
         return str_ver
