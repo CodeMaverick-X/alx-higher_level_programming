@@ -54,6 +54,7 @@ class Rectangle:
         return 2 * self.__height + 2 * self.__width
 
     def __str__(self):
+        """printabe string of the class"""
         if self.__width == 0 or self.__height == 0:
             return ""
         for h in range(self.__height):
