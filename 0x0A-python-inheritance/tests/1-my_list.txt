@@ -1,15 +1,12 @@
 =============================
 The ``1-my_list`` module
-=============================
-
-Using ``MyList``
----------------------
+============================
 
 Import the class:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Now test it:
+test it:
 
     >>> my_list = MyList()
 
