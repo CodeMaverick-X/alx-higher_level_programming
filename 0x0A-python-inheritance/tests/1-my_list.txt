@@ -27,6 +27,10 @@ start test
 
 >>> new_l.print_sorted()
 []
+>>> my_list = MyList("hello")
+
+>>> my_list
+['h', 'e', 'l', 'l', 'o']
 
 
 
