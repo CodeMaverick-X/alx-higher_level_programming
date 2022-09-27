@@ -10,4 +10,5 @@ import json
 
 
 def from_json_string(my_str):
+    """converts from json str to py obj"""
     return json.loads(my_str)
