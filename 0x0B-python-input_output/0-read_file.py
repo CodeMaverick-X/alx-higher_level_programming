@@ -8,4 +8,5 @@ def read_file(filename=""):
     """opens <filename> and prints to stdout"""
 
     with open(filename, encoding="utf-8") as fp:
-        print(fp.read())
+        data = fp.read()
+        print(data)
