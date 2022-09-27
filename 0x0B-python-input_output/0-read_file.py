@@ -12,4 +12,4 @@ def read_file(filename=""):
             data = fp.readline()
             if not data:
                 break
-            print(data)
+            print(data, end="")
