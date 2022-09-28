@@ -30,7 +30,7 @@ class Student:
         Return: dictionary
         """
         if attrs is None:
-            return self.__dict__
+            return self.__dict__.copy()
         else:
             new = {}
             for l in attrs:
