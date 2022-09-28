@@ -26,8 +26,7 @@ class Student:
         Returns: dictionary
         """
 
-        if (type(attrs) == list and 
-                all(type(x) == str for x in attrs)):
+        if (type(attrs) == list and all(type(x) == str for x in attrs)):
             new = {}
             for l in attrs:
                 if l in self.__dict__:
