@@ -30,7 +30,7 @@ class Student:
                 if x in self.__dict__:
                     new.update({x: self.__dict__[x]})
             return new
-        return self.__dict__
+        return self.__dict__.copy()
 
     def reload_from_json(self, json):
         """reload json
