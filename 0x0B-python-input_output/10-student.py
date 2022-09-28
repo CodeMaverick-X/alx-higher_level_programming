@@ -33,6 +33,6 @@ class Student:
             new = {}
             for l in attrs:
                 if l in self.__dict__:
-                    new[l] = self.__dict__[l]
+                    new.update({l: self.__dict__[l]})
             return new
         return self.__dict__
