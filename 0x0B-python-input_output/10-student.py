@@ -31,11 +31,9 @@ class Student:
         """
         if attrs is None:
             return self.__dict__
-        if isinstance(attrs, list) and all([isinstance(x, str) for x in attrs]):
+        else:
             new = {}
             for l in attrs:
                 if l in self.__dict__:
                     new[l] = self.__dict__[l]
             return new
-        else:
-            return self.__dict__
