@@ -16,11 +16,10 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrieves a dict representation of student"""
-        new = {}
-
         if attrs is None:
             return self.__dict__
         else:
+            new = {}
             for l in attrs:
                 if l in self.__dict__:
                     new[l] = self.__dict__[l]
