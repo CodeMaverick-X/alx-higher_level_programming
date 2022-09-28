@@ -28,6 +28,6 @@ class Student:
             new = dict()
             for l in attrs:
                 if l in self.__dict__:
-                    new[l] = self.__dict__[l]
+                    my_dict.update({x: self.__dict__[x]})
             return new
-        return self.__dict__
+        return self.__dict__.copy()
