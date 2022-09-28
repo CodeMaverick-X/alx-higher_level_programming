@@ -26,8 +26,8 @@ class Student:
         if (type(attrs) == list and
                 all(type(x) == str for x in attrs)):
             new_dict = dict()
-            for l in attrs:
-                if l in self.__dict__:
-                    new_dict.update({l: self.__dict__[l]})
+            for x in attrs:
+                if x in self.__dict__:
+                    new_dict.update({x: self.__dict__[x]})
             return new_dict
         return self.__dict__.copy()
