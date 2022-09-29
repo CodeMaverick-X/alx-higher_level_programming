@@ -10,8 +10,7 @@ def fact(n):
     if n == 1 or n == 0:
         return 1
 
-    ans = n * fact(n - 1)
-    return ans
+    return (n * fact(n - 1))
 
 
 def pascal_triangle(n):
@@ -31,3 +30,6 @@ def pascal_triangle(n):
         base.append(sub)
 
     return base
+
+
+print(pascal_triangle(5))
