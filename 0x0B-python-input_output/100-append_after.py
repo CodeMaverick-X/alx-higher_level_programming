@@ -14,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
     for i in range(len(r)):
         new_data.append(r[i])
         if search_string in r[i]:
-            new_data.append(new_string * 2)
+            new_data.append(new_string)
 
     with open(filename, "w", encoding="utf-8") as fp:
         fp.writelines(new_data)
