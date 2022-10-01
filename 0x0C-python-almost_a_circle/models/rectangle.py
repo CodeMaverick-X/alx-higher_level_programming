@@ -100,36 +100,30 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """update the intsnce attrr"""
-        if len(args) != 0:
-            self.id = args[0]
-            if len(args) > 1:
-                self.width = args[1]
-            if len(args) > 2:
-                self.height = args[2]
-            if len(args) > 3:
-                self.x = args[3]
-            if len(args) > 4:
-                self.y = args[4]
-        else:
+        attr = ["id", "width", "height", "x", "y"]
 
+        if len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, attr[i], args[i])
+        else:
+            for i in kwargs:
+                setattr(self, i, kwargs[i])
+
+    def to_dictionary(self):
+        """returns the rectangle dict"""
+        return self.__dict__
 
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(10, 10, 10, 10)
+    r1 = Rectangle(10, 2, 1, 9)
     print(r1)
+    r1_dictionary = r1.to_dictionary()
+    print(r1_dictionary)
+    print(type(r1_dictionary))
 
-    r1.update(89)
-    print(r1)
-
-    r1.update(89, 2)
-    print(r1)
-
-    r1.update(89, 2, 3)
-    print(r1)
-
-    r1.update(89, 2, 3, 4)
-    print(r1)
-
-    r1.update(89, 2, 3, 4, 5)
-    print(r1)
+    r2 = Rectangle(1, 1)
+    print(r2)
+    r2.update(**r1_dictionary)
+    print(r2)
+    print(r1 == r2)
