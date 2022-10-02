@@ -111,7 +111,11 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the rectangle dict"""
-        return self.__dict__
+        
+        dic = {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
+
+        return dic
 
 
 if __name__ == "__main__":
