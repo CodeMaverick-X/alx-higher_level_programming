@@ -5,6 +5,7 @@ module base
 
 
 import json
+from os import path
 
 
 class Base:
@@ -42,4 +43,50 @@ class Base:
         with open(filename, "w", encoding="utf-8") as fp:
             fp.write(e_data)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from json to string
+        that returns the list of the JSON string representation
+        """
+        if json_string is None:
+            return []
+        else:
+            d_data = json.loads(json_string)
+            return d_data
 
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+            dummy.update(**dictionary)
+            return dummy
+        elif cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+            dummy.update(**dictionary)
+            return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances that where loaded from
+        a file, hence the name load from file duhh
+        """
+
+        filename = cls.__name__ + ".json"
+        if path.exists(filename) and path.getsize(filename) > 0:
+            instance = []
+            with open(filename, encoding="utf-8") as fp:
+                e_data = fp.read()
+                d_data = Base.from_json_string(e_data)
+
+                for i in d_data:
+                    sub = cls.create(**i)
+                    instance.append(sub)
+            return instance
+
+        else:
+            return []
