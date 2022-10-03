@@ -6,7 +6,8 @@ test module for base module
 
 import unittest
 from models.base import Base
-
+import io
+import contextlib
 
 class testbase(unittest.TestCase):
     """

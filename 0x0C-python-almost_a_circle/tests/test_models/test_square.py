@@ -3,7 +3,8 @@
 test module for square module
 """
 
-
+import io
+import contextlib
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -148,3 +149,55 @@ class testsquare(unittest.TestCase):
             r1 = Square(4, 5, -1)
         self.assertEqual("y must be >= 0", str(x.exception))
 
+
+    def test_12_1(self):
+        """Test for update method on Square with wrong types."""
+
+        s1 = Square(9)
+        with self.assertRaises(TypeError) as x:
+            s1.update(2, 3, 4, "hello")
+        self.assertEqual("y must be an integer", str(x.exception))
+
+    def test_14_0(self):
+        """Test for public method to_dictionary."""
+
+        s1 = Square(10, 2, 1)
+        s1_dictionary = s1.to_dictionary()
+        s_dictionary = {'x': 2, 'y': 1, 'id': 1, 'size': 10}
+        self.assertEqual(len(s1_dictionary), len(s_dictionary))
+        self.assertEqual(type(s1_dictionary), dict)
+        s2 = Square(1, 1)
+        s2.update(**s1_dictionary)
+        s2_dictionary = s2.to_dictionary()
+        self.assertEqual(len(s1_dictionary), len(s2_dictionary))
+        self.assertEqual(type(s2_dictionary), dict)
+        self.assertFalse(s1 == s2)
+
+    def test_14_1(self):
+        """Test for public method to_dictionary with wrong args."""
+
+        s = "to_dictionary() takes 1 positional argument but 2 were given"
+        with self.assertRaises(TypeError) as x:
+            s1 = Square(10, 2, 1, 9)
+            s1_dictionary = s1.to_dictionary("Hi")
+        self.assertEqual(s, str(x.exception))
+
+    def test_10_4(self):
+        """Test Square for methods inherited from Rectangle."""
+
+        s1 = Square(9)
+        self.assertEqual(s1.area(), 81)
+        s2 = Square(4, 1, 2, 5)
+        s2.update(7)
+        self.assertEqual(s2.id, 7)
+        f = io.StringIO()
+        s3 = Square(4)
+        with contextlib.redirect_stdout(f):
+            s3.display()
+        s = f.getvalue()
+        res = "####\n####\n####\n####\n"
+        self.assertEqual(s, res)
+
+
+if __name__ == '__main__':
+    unittest.main()
