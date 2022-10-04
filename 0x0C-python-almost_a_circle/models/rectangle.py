@@ -10,7 +10,15 @@ class Rectangle(Base):
     """racctangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """init constructor"""
+        """
+        instance constructor
+        Args:
+            - width: (required arg) width of the rectangle
+            - height: (required arg) heighgt of the rectangle
+            - x: offset on the x plane
+            - y: offset on the y plane
+            - id: instance id set by base class
+        """
 
         self.width = width
         self.height = height
@@ -25,7 +33,12 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """width setter"""
+        """
+        width setter
+        Args:
+            - value: width value, must be an integer and must
+            be greater than 0
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -40,7 +53,12 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """height setter"""
+        """
+        height setter
+        Args:
+            - value: height value, must be an integer and must
+            be greater than 0
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
