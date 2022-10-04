@@ -146,10 +146,9 @@ class Base:
 
         filename = cls.__name__ + ".csv"
         with open(filename, "w", encoding="utf-8") as fp:
-            writer = csv.DictWriter(fp, fieldnames = dict_f)
+            writer = csv.DictWriter(fp, fieldnames=dict_f)
             writer.writeheader()
             writer.writerows(list_dict)
-
 
     @classmethod
     def load_from_file_csv(cls):
@@ -158,7 +157,7 @@ class Base:
         """
 
         filename = cls.__name__ + ".csv"
-        l = []
+        l1 = []
         if path.exists(filename):
             with open(filename, 'r') as f:
                 reader = csv.reader(f, delimiter=',')
@@ -172,5 +171,5 @@ class Base:
                         for j, e in enumerate(row):
                             if e:
                                 setattr(i, fields[j], int(e))
-                        l.append(i)
-        return l
+                        l1.append(i)
+        return l1
