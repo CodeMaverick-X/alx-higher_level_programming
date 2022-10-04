@@ -157,19 +157,21 @@ class Base:
         """
 
         filename = cls.__name__ + ".csv"
-        l1 = []
-        if path.exists(filename):
-            with open(filename, 'r') as f:
-                reader = csv.reader(f, delimiter=',')
-                if cls.__name__ == 'Rectangle':
-                    fields = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == 'Square':
-                    fields = ['id', 'size', 'x', 'y']
-                for x, row in enumerate(reader):
-                    if x > 0:
-                        i = cls(1, 1)
-                        for j, e in enumerate(row):
-                            if e:
-                                setattr(i, fields[j], int(e))
-                        l1.append(i)
-        return l1
+        if path.exists(filename) and path.getsize(filename) > 0:
+            instance = []
+            with open(filename, encoding="utf-8") as fp:
+                reader = csv.DictReader(fp)
+                d_data = list(reader)
+
+                for i in d_data:
+                    key = list(i)
+                    for j in key:
+                        i.update({j: int(i[j])})
+
+                for i in d_data:
+                    sub = cls.create(**i)
+                    instance.append(sub)
+            return instance
+
+        else:
+            return []
