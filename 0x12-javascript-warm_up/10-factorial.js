@@ -4,7 +4,7 @@ const process = require('process');
 const num1 = parseInt(process.argv[2]);
 
 function fact (num) {
-  if (num === 1 || num === 0 || num === NaN) {
+  if (num === 1 || num === 0 || isNaN(num)) {
     return 1;
   }
 
