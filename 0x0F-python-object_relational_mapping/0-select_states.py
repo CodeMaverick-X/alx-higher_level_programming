@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""connect to mysql server and qet data"""
 
 import MySQLdb
 from sys import argv
@@ -6,7 +7,6 @@ from sys import argv
 username = argv[1]
 password = argv[2]
 database = argv[3]
-f = 0
 
 db = MySQLdb.connect(
         host="localhost",
