@@ -19,6 +19,7 @@ if __name__ == "__main__":
 
     c = db.cursor()
 
+
     c.execute("SELECT * FROM states WHERE name = %s", (state_name,))
     result = c.fetchall()
 
