@@ -17,7 +17,7 @@ if __name__ == "__main__":
             )
 
     c = db.cursor()
-    sql_cmd = "SELECT * FROM cities"
+    sql_cmd = "SELECT * FROM cities ORDER BY id ASC"
 
     c.execute(sql_cmd)
     result = c.fetchall()
