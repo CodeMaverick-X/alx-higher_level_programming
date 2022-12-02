@@ -18,7 +18,6 @@ if __name__ == "__main__":
             )
 
     c = db.cursor()
-    
     sql_cmd = "SELECT * FROM states WHERE {} = %s".format("name")
     value = (state_name,)
 
