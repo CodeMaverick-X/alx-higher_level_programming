@@ -16,7 +16,6 @@ if __name__ == "__main__":
             db=database
             )
 
-
     c = db.cursor()
 
     c.execute("select * from states")
