@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module to create class for table
+"""
 
 import sqlalchemy
 from sqlalchemy import create_engine
