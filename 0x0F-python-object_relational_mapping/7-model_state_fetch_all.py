@@ -16,7 +16,8 @@ if __name__ == "__main__":
     password = argv[2]
     database = argv[3]
 
-    url="mysql://{}:{}@localhost:3306/{}".format(username,password, database)
+    url="mysql://{}:{}@localhost:3306/{}"\
+            .format(username,password, database)
     engine = create_engine(url, echo=False)
     hi = engine.execute("select * from states ORDER BY id ASC")
     me = hi.fetchall()
