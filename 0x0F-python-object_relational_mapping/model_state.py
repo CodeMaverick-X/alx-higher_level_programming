@@ -21,7 +21,3 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-
-"""url="mysql://reinhard:password@localhost:3306/hbtn_0e_0_usa"
-engine = create_engine(url, echo=True)
-Base.metadata.create_all(engine)"""
