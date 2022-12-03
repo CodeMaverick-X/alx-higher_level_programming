@@ -25,4 +25,4 @@ if __name__ == "__main__":
     if me:
         print("{}: {}".format(me[0], me[1]))
     else:
-        print()
+        print("Nothing")
