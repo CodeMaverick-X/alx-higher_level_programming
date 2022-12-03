@@ -19,12 +19,13 @@ if __name__ == "__main__":
 
     url = "mysql://{}:{}@localhost:3306/{}"\
         .format(username, password, database)
-    engine = create_engine(url, echo=False)
+    engine = create_engine(url, echo=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()
     name = "Louisiana"
     state = State(name=name)
-    Base.metadata.create_all(engine)
-    new_state = session.query(State).filter(State.name == name).first()
-    print("{}".format(new_state.id))
+    session.add(state)
+    session.flush()
+    new = session.query(State).filter(State.name == name).first()
+    print("{}".format(new.id))
