@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     url = "mysql://{}:{}@localhost:3306/{}"\
         .format(username, password, database)
-    engine = create_engine(url, echo=True)
+    engine = create_engine(url, echo=False)
 
     Session = sessionmaker(bind=engine)
     session = Session()
