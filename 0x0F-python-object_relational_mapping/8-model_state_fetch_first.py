@@ -22,5 +22,7 @@ if __name__ == "__main__":
     hi = engine.execute("select * from states ORDER BY id ASC")
     me = hi.fetchone()
 
-    if len(me) != 0:
+    if me:
         print("{}: {}".format(me[0], me[1]))
+    else:
+        print()
