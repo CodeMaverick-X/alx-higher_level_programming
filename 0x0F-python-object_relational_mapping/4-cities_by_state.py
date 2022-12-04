@@ -17,13 +17,11 @@ if __name__ == "__main__":
             )
 
     c = db.cursor()
-    sql_cmd = "SELECT * FROM cities ORDER BY id ASC"
+    sql_cmd = "SELECT cities.id, cities.name, states.name FROM cities\
+            JOIN states ON states.id=cities.state_id ORDER BY id ASC"
 
     c.execute(sql_cmd)
     result = c.fetchall()
 
     for i in result:
         print(i)
-
-    c.close()
-    db.close()

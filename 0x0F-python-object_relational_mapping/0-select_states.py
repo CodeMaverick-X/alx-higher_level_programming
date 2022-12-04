@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""connect to mysql server and qet data"""
+"""
+connect to mysql server and lists all states
+using the mysqldb api
+"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv

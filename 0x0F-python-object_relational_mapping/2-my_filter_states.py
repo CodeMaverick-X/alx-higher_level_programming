@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""connect to mysql server and qet data"""
+"""
+script that takes in an argument and displays
+all values in the states table of
+"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv

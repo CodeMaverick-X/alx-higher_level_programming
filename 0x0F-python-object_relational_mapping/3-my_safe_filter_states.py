@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""connect to mysql server and qet data"""
+"""
+imune to sql injection, because its not passed
+directly to the string and i strip and scramble
+a bit
+"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv

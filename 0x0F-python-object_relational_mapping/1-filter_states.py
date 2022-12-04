@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""connect to mysql server and qet data"""
+"""
+list all states with a name starting with
+`N` from the database
+"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
@@ -18,7 +21,10 @@ if __name__ == "__main__":
 
     c = db.cursor()
 
-    c.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
+    sql_cmd = "SELECT * FROM states WHERE name\
+        like 'N%' ORDER BY id ASC"
+
+    c.execute(sql_cmd)
     result = c.fetchall()
 
     for i in result:
