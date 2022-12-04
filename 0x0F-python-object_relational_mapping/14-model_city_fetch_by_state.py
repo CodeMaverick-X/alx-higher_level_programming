@@ -18,8 +18,8 @@ if __name__ == "__main__":
     engine = create_engine(url, echo=False)
 
     session = Session(bind=engine)
-    city_obj = session.query(City, State).\
-        join(State, State.id == City.state_id).all()
+    city_obj = session.query(City.name, State.name).\
+        outerjoin(State, State.id == City.state_id).all()
 
     for i, row in enumerate(city_obj):
-        print("{}: ({}) {}".format(row[1].name, i+1, row[0].name))
+        print("{}: ({}) {}".format(row[1], i+1, row[0]))
