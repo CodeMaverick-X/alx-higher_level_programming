@@ -1,15 +1,12 @@
 #!/usr/bin/python3
 """
-module to create class for table
+script that changes the name
+of a State object from the database
 """
 
-import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sys import argv
-
 from model_state import Base, State
 
 if __name__ == "__main__":

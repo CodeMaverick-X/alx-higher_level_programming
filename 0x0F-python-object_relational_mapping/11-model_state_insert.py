@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """
-module to create class for table
+script that adds the State object
+“Louisiana” to the database
 """
 
-import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
