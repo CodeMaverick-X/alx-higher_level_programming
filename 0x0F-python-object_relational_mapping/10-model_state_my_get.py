@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-module to create class for table
+script that prints the State object with the
+name passed as argument from the database
+NOTE: USE ORM NOT CORE!!!
 """
 
-import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 from sys import argv
-
 from model_state import Base, State
 
 if __name__ == "__main__":

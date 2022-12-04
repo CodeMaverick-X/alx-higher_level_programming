@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""connect to mysql server and qet data from cities table"""
+"""
+script that takes in the name of a state as an argument
+and lists all cities of that state, using the database
+"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv

@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
 script that prints the first State object from the database
+USE ORM NOT CORE!!!
 """
 
 import sqlalchemy
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 from sys import argv
 
 from model_state import Base, State
