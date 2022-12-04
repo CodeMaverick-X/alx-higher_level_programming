@@ -20,11 +20,9 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
 
-    #State.delete().where(State.name.like('%a%'))
-    
     rows = session.query(State).filter(State.name.like('%a%')).all()
-        
+
     for row in rows:
         session.delete(row)
-    
+
     session.commit()
