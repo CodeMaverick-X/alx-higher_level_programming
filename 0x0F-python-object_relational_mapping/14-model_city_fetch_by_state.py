@@ -6,7 +6,7 @@ from sys import argv
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, relationship
 
 if __name__ == "__main__":
     username = argv[1]
@@ -18,8 +18,11 @@ if __name__ == "__main__":
     engine = create_engine(url, echo=False)
 
     session = Session(bind=engine)
-    city_obj = session.query(City.name, State.name).\
-        outerjoin(State, State.id == City.state_id).all()
 
-    for i, row in enumerate(city_obj):
-        print("{}: ({}) {}".format(row[1], i+1, row[0]))
+    State.cities = relationship("City", order_by=City.id,
+                                backref="state")
+
+    cities = session.query(City).join(State).order_by(City.id).all()
+
+    for i, city in enumerate(cities):
+        print("{}: ({:d}) {}".format(city.state.name, i+1, city.name))
