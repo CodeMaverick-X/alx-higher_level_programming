@@ -22,7 +22,7 @@ if __name__ == "__main__":
     c = db.cursor()
 
     sql_cmd = "SELECT * FROM states WHERE name\
-        like 'N%' ORDER BY id ASC"
+        like 'N%' OR name like 'n%' ORDER BY id ASC"
 
     c.execute(sql_cmd)
     result = c.fetchall()
