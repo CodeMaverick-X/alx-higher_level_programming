@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 script that takes in an argument and displays
-all values in the states table of
+all values in the states table of the database
 """
 if __name__ == "__main__":
     import MySQLdb
@@ -21,7 +21,7 @@ if __name__ == "__main__":
             )
 
     c = db.cursor()
-    sql_cmd = "SELECT * FROM states WHERE {} = %s".format("name")
+    sql_cmd = "SELECT * FROM states WHERE {} = BINARY %s".format("name")
     value = (state_name,)
 
     c.execute(sql_cmd, value)
