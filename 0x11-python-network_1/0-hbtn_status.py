@@ -3,7 +3,7 @@
 from urllib.request import urlopen, Request
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     request = Request("https://alx-intranet.hbtn.io/status")
     with urlopen(request) as rsp_obj:
         obj = rsp_obj.read()
