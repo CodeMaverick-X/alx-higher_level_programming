@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-scrip that takes in a url and displays the value of the
-x-request-id
+python script that fetches https://alx-intranet.hbtn.io/status
 """
 from urllib.request import urlopen, Request
-from sys import argv
-
 
 if __name__ == "__main__":
-    url = argv[1]
-    request = Request(url)
-    with urlopen(request) as responds:
-        obj = responds.info()["X-Request-Id"]
-        print(obj)
+    request = Request("https://alx-intranet.hbtn.io/status")
+    with urlopen(request) as rsp_obj:
+        obj = rsp_obj.read()
+        obj_d = obj.decode("utf-8")
+
+        print("Body response:")
+        print("\t- type: {}".format(type(obj)))
+        print("\t- content: {}".format(obj))
+        print("\t- utf8 content: {}".format(obj_d))
