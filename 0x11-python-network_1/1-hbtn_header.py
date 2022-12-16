@@ -8,8 +8,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    url = argv[0]
+    url = argv[1]
     request = Request(url)
     with urlopen(request) as responds:
-        obj = responds.reads()
-        print(obj.header["X-Request-Id"])
+        obj = responds.info()["X-Request-Id"]
+        print(obj)
