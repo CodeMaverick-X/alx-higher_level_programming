@@ -16,5 +16,5 @@ if __name__ == "__main__":
             }
     url = argv[1]
 
-    r = requests.post(url,data=data_dic)
+    r = requests.post(url, data=data_dic)
     print(r.text)
