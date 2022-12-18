@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 takes a url and sends a request and displayes
-"""using requests module
+using requests module
+"""
 
 import requests
 from sys import argv
