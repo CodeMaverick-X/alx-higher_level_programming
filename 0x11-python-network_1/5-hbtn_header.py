@@ -3,10 +3,13 @@
 # using requests module
 
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
-    r = requests.get("https://alx-intranet.hbtn.io")
+
+    url = argv[1]
+    r = requests.get(url)
 
     tmp = r.headers["X-Request-Id"]
     print(tmp)
