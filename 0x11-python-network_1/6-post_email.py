@@ -11,9 +11,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    data_dic = {
-            "email": argv[2]
-            }
+    data_dic = {"email": argv[2]}
     url = argv[1]
 
     r = requests.post(url, data=data_dic)
