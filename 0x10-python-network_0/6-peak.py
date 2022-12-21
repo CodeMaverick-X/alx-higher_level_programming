@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-
-
+"""
+function that finds peak in a list
+"""
 def find_peak(list_of_integers):
-
-    """nction that finds a peak in a list of unsorted integers."""
+    """function that finds a peak in a list of unsorted integers."""
     i = len(list_of_integers)
 
     if i < 1 or list_of_integers is None:
