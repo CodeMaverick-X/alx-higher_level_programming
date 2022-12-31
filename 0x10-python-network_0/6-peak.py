@@ -14,6 +14,5 @@ def find_peak(list_of_integers):
     if i == 1:
         return list_of_integers
 
-    new = list_of_integers.copy()
-    new.sort()
-    return new[-1]
+    new = max(list_of_integers)
+    return new
